@@ -11,6 +11,7 @@ I'm using this repo to track my progress as I learn Verilog, one design at a tim
 | # | Project | Modeling Style(s) | Status |
 |---|---------|-------------------|--------|
 | 1 | Half Adder | Dataflow, Behavioral, Structural | ✅ Done |
+| 2 | Full Adder | Dataflow,Behavioral |✅ Done|
 
 *(Table will be updated as new projects are added)*
 
@@ -24,11 +25,14 @@ verilog-projects/
 │   ├── half_adder_behavioral.v
 │   ├── half_adder_structural.v
 │   ├── half_adder_tb.v
-│   └── README.md
+│  ├── EADME.md
 │
-├── 02_.../
-│
-└── README.md   (this file)
+├── 02_full_adder/
+│    ├── full_adder_dataflow.v
+|    ├── full_adder_behavioral.v
+|    ├── full_adder_testbench.v
+|    ├── waveform.jpg
+     ── README.md   (this file)
 ```
 
 ## 🧩 Project 1: Half Adder (Three Modeling Styles)

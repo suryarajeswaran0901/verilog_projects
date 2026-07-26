@@ -11,7 +11,7 @@ I'm using this repo to track my progress as I learn Verilog, one design at a tim
 | # | Project | Modeling Style(s) | Status |
 |---|---------|-------------------|--------|
 | 1 | Half Adder | Dataflow, Behavioral, Structural | ✅ Done |
-| 2 | Full Adder | Dataflow,Behavioral |✅ Done|
+| 2 | Full Adder | Dataflow, Behavioral, Structural (using two Half Adders) | ✅ Done |
 
 *(Table will be updated as new projects are added)*
 
@@ -25,14 +25,16 @@ verilog-projects/
 │   ├── half_adder_behavioral.v
 │   ├── half_adder_structural.v
 │   ├── half_adder_tb.v
-│  ├── EADME.md
+│   ├── waveform.jpg
+│   ├── README.md
 │
 ├── 02_full_adder/
-│    ├── full_adder_dataflow.v
-|    ├── full_adder_behavioral.v
-|    ├── full_adder_testbench.v
-|    ├── waveform.jpg
-     ── README.md   (this file)
+│   ├── full_adder_dataflow.v
+│   ├── full_adder_behavioral.v
+│   ├── full_adder_structural.v
+│   ├── full_adder_testbench.v
+│   ├── waveform.jpg
+│   ├── README.md   (this file)
 ```
 
 ## 🧩 Project 1: Half Adder (Three Modeling Styles)
@@ -45,16 +47,26 @@ A **half adder** takes two single-bit inputs (`a`, `b`) and produces a `sum` and
 
 A testbench is included to verify all four input combinations against the expected truth table.
 
+## 🧩 Project 2: Full Adder (Three Modeling Styles)
+
+A **full adder** takes three single-bit inputs (`a`, `b`, `cin`) and produces a `sum` and a `cout` (carry-out) output. This project implements the full adder using three different Verilog modeling styles:
+
+- **Dataflow Modeling** — using continuous assignments (`assign`) with boolean expressions for `sum` and `cout`
+- **Behavioral Modeling** — describing the logic inside an `always` block using input combinations
+- **Structural Modeling** — built by instantiating **two Half Adders** and combining their outputs with an `OR` gate to generate the final `sum` and `cout`
+
+A testbench is included to verify all eight input combinations against the expected truth table, and the resulting waveform (`waveform.jpg`) is included to visually confirm correct behavior in GTKWave.
+
 ## 🚀 Tools Used
 - **Icarus Verilog** — compiler/simulator
 - **VS Code** — code editor
 - **GTKWave** — waveform viewer
 
 ## 📈 Progress Log
-- **[Date]** — Added Half Adder in three modeling styles (dataflow, behavioral, structural)
+- **19/07/26** — Added Half Adder in three modeling styles (dataflow, behavioral, structural)
+- **26/07/26** — Added Full Adder in three modeling styles (dataflow, behavioral, structural using two half adders) + waveform
 
 ## 🎯 Upcoming
-- Full Adder (dataflow, behavioral, structural)
 - Half Subtractor
 - Full Subtractor
 - Flip-Flops (SR, D, JK, T)

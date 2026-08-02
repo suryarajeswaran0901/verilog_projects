@@ -12,6 +12,7 @@ I'm using this repo to track my progress as I learn Verilog, one design at a tim
 |---|---------|-------------------|--------|
 | 1 | Half Adder | Dataflow, Behavioral, Structural | ✅ Done |
 | 2 | Full Adder | Dataflow, Behavioral (using two Half Adders) | ✅ Done |
+| 3 | Half subtractor | Dataflow, Behavioral, Gate level | ✅ Done |
 
 *(Table will be updated as new projects are added)*
 
@@ -34,6 +35,16 @@ verilog-projects/
 │   ├── full_adder_testbench.v
 │   ├── waveform.jpg
 │   ├── README.md   (this file)
+│
+├── 03_half_subtractor/
+│   ├── half_subtractor_gatelevel.v
+│   ├── half_subtractor_dataflow.v
+│   ├── half_adder_behavioral.v
+│   ├── half_adder_testbench.v
+│   ├── waveform.jpg
+│   ├── README.md   (this file)
+
+
 ```
 
 ## 🧩 Project 1: Half Adder (Three Modeling Styles)
@@ -56,18 +67,29 @@ A **full adder** takes three single-bit inputs (`a`, `b`, `cin`) and produces a 
 
 A testbench is included to verify all eight input combinations against the expected truth table, and the resulting waveform (`waveform.jpg`) is included to visually confirm correct behavior in GTKWave.
 
+## 🧩 Project 3: Half Subtractor (Three Modeling Styles)
+
+A **Half Subtractor** takes two single-bit inputs (`a`, `b`) and produces a `difference` and a `borrow` output. This project implements the half sutractor using three different Verilog modeling styles:
+
+- **Dataflow Modeling** — using continuous assignments (`assign`) with boolean expressions for `diff` and `bor`
+- **Behavioral Modeling** — describing the logic inside an `always` block using input combinations
+- **Structural Modeling** — building the circuit from gate primitives (`xor`, `and`)
+
+A testbench is included to verify all four input combinations against the expected truth table, and the resulting waveform (`waveform.jpg`) is included to visually confirm correct behavior in GTKWave.
+
 ## 🚀 Tools Used
 - **Icarus Verilog** — compiler/simulator
 - **VS Code** — code editor
 - **GTKWave** — waveform viewer
 
 ## 📈 Progress Log
-- **19/07/26** — Added Half Adder in three modeling styles (dataflow, behavioral, structural)
+- **19/07/26** — Added Half Adder in three modeling styles (dataflow, behavioral, structural) + waveform
 - **26/07/26** — Added Full Adder in three modeling styles (dataflow, behavioral, structural using two half adders) + waveform
+- **02/08/26** — Added Half Subtractor in three modeling styles (dataflow, behavioral, structural) + waveform
 
 ## 🎯 Upcoming
-- Half Subtractor
-- Full Subtractor
+- Multiplexer,Demultiplexer
+- Encoder,Decoder
 - Flip-Flops (SR, D, JK, T)
 
 ## 📬 Contact

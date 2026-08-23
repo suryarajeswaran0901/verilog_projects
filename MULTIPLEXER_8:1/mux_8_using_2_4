@@ -1,0 +1,9 @@
+module mux_8u2(s,a,y);
+input [2:0]s;
+input [7:0]a;
+output y;
+wire [1:0]w;
+muxfour_gate m1 (s[1:0],a[3:0],w[0]);
+muxfour_gate m2 (s[1:0],a[7:4],w[1]);
+mux_2gate m3 (s[2],w[0],w[1],y);
+endmodule
